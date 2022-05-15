@@ -1,27 +1,33 @@
-# ML Research Project Template
+# Audible Phone Calls
 
-This template is designed to help you with your research projects. In addition to the basic python code you would see in a generic project, I have also added development and production sections, including app development and web development.
+> Name to be Workshopped (T4G 2022 Idea)
 
-In a more generic sense, a ML Research Project goes through 3 real components (shown in the form of a repository structure):
+## Problem Definition
 
-- [**`research`**](./research), wherein students perform exploratory data analyses, cleaning, model prototyping and simple experimentation and exploration. This is very likely done in the context of a notebook (eg Jupyter Notebook). This formally represents the data science lifecycle up till the data exploration section (i.e. acquisition, cleaning and exploration of data).
+**Problem Statement**: How might we improve the experience of phone calls for people with hearing loss?
 
-  - **[`preprocessing`](./research/preprocessing)** (Python): Data Acquisition and Cleaning location.
+### The Problem
+Most businesses still operate via phone calls for immediate resolutions. For example, one would call a restaurant for a reservation, banks may call with urgent security alerts, customer service might call when the repair is completed, and so on. However, a hard-of-hearing person may not be able to understand the phone conversations accurately due to their loss of hearing. How can we use technology to reduce misunderstandings in a phone conversation? The ideal solution would be affordable and accessible to all types of sensorineural hearing loss.
 
-  - **[`exploration`](./research/exploration)** (Python): A huge report-esque mini-research project.
-  - [**`pipeline`**](./research/pipeline) (Python): A simple machine learning template.
-  - [**`modelling`**](./research/modelling) (Python): A simple modelling section with some customized directories.
-    - [**`algorithms`**](./research/modelling/algorithms): A set of tools from many tasks in Machine Learning.
-    - [**`classification`**](./research/modelling/classification) and [**`regression`**](./research/modelling/regression): A set of templates for classification and regression tasks.
-    - [**`deep-learning`**](./research/modelling/deep-learning): A specialised environment for general Deep Learning (DL) projects.
-    - [**`pytorch`**](./research/modelling/pytorch): An environment designed for any project done in PyTorch.
+### The Community
+Hearing loss is defined as being partially or completely unable to hear sounds in one or both ears. While there are numerous causes that lead to hearing loss, they can happen from birth (congenital) or from external causes (acquired). Every hearing loss is unique, and commonly categorized into one of these four categories: mild hearing loss, moderate hearing loss, severe hearing loss or profound hearing loss. ([ref](https://sadeaf.org.sg/about-deafness/introduction/))
 
-- [**`production`**](./production), where researchers use the prototyped models and fully train them. Since such models require a lot of usage of RAM etc, this is often done with the help of GPUs. Hence, distilled utils lib, training job and inference service are implemented here. The production-ready solution(s) are composed of libraries, services, and jobs.
+In Singapore, research has showed that about 0.1% (or 1 of every 1,000) babies born in Singapore have severe or profound hearing loss, and about 0.5% (or 5 of every 1,000) have lesser degrees of hearing loss. As the second fastest ageing nation in Asia after Japan, age-related hearing loss is becoming very common in our population. About 50% of those 80 years and above is expected to have significant hearing loss. In total, it is estimated that 360,000, or 1 in 11 Singaporeans have hearing loss. ([ref](https://www.gleneagles.com.sg/healthplus/article/hearing-loss))
 
-  - **[`python-utils-lib`](./production/python-utils-lib)** (Python): Utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
-  - **[`training-job`](./production/training-job)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ ennvironment.
-  - **[`inference-service`](./production/inference-service)** (Python/Docker): Docker container that provides the final model prediction capabilities via a REST API.
+### Learning Objectives
+- Understand how hearing loss affects people and their everyday lives directly from the community
+- Learn software engineering principles and how to apply them in your design
+- Learn about the science of hearing and sounds
+- Learn to solve a real-world problem with design thinking and STEM
+- Learn how to dissect the problem statement and communicate your solution to an audience
+- Develop an empathetic understanding of people with disabilities
 
-- [**`development`**](./development), where researchers often utilise software development strategies in a truly ML4SE-like system to visualise and utilise their results. Applications on the web, desktop or mobile are often preferred, and this repository contains many templates for such development. Often, Streamlit is also used as a substitute to simply model information rather than creating a full-fledged application. Due to the complexity of these submodules, I have chosen to leave them as an exercise to the reader.
+### Additional Reading
+1. [Introduction to Deafness and Hearing Loss](https://sadeaf.org.sg/about-deafness/introduction/)
+2. [Hearing Loss – What it is](https://www.singhealth.com.sg/patient-care/conditions-treatments/hearing-loss)
+3. [A beginner’s guide to acoustics, noise & hearing loss](https://www.ideasforears.org.uk/useful-info/acoustics-and-noise/)
+4. [Phone calls are causing frustration and stress](https://www.ideasforears.org.uk/blog/phone-calls-are-causing-frustration-and-stress/)
 
-It is recommended to simply clone this repo and customize it to the specific use-case at hand. Delete appropriate directories please!
+
+## Proposed Solution
+Phone call conversations may often be hard to make out due to poor reception, background noise and for the hard-of-hearing, This may adversely affect careers requiring consistent communications with clients or colleagues, inhibit conversations with friends and relatives and even delay the call for urgent aid from emergency services or family. To address this issue, we want to create a software that will perform Speech-To-Text on the caller's voice. It will be displayed to the deaf user, to read (while still being able to  listen to the call for those that are partially deaf. We wish to also make use of real-time noise suppression and clarity enhancing machine learning algorithms in improving the audio fidelity of calls. We plan to integrate these features into a mobile app which interfaces with the phone’s native calling functionality.
