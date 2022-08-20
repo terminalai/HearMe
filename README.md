@@ -1,6 +1,7 @@
-# Audible Phone Calls
+# HearMe
 
-> Name to be Workshopped (T4G 2022 Idea)
+> _by Kabir, Vishal, Prannaya, Zayan and Jed_
+> T4G 2022 Project
 
 ## Problem Definition
 
@@ -31,3 +32,4 @@ In Singapore, research has showed that about 0.1% (or 1 of every 1,000) babies b
 
 ## Proposed Solution
 Phone call conversations may often be hard to make out due to poor reception, background noise and for the hard-of-hearing, This may adversely affect careers requiring consistent communications with clients or colleagues, inhibit conversations with friends and relatives and even delay the call for urgent aid from emergency services or family. To address this issue, we want to create a software that will perform Speech-To-Text on the caller's voice. It will be displayed to the deaf user, to read (while still being able to  listen to the call for those that are partially deaf. We wish to also make use of real-time noise suppression and clarity enhancing machine learning algorithms in improving the audio fidelity of calls. We plan to integrate these features into a mobile app which interfaces with the phone’s native calling functionality.
+
