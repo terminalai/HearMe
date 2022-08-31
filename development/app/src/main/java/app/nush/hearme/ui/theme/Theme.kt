@@ -1,6 +1,8 @@
 package app.nush.hearme.ui.theme
 
+import android.hardware.lights.Light
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
@@ -41,4 +43,13 @@ fun HearMeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable
         shapes = Shapes,
         content = content
     )
+}
+
+object HearMeTheme {
+    val colors: Colors
+        @Composable
+        get() {
+            return if (isSystemInDarkTheme()) DarkColorPalette
+            else LightColorPalette
+        }
 }
