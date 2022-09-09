@@ -12,9 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-@Preview
 @Composable
-fun SmallSettings() {
+fun SmallSettings(openSettings: () -> Unit) {
     val noiseSuppression = remember { mutableStateOf(0.0f) }
 
     Column(
@@ -28,7 +27,7 @@ fun SmallSettings() {
             valueRange = 0.0f .. 1.0f
         )
 
-        TextButton(onClick = {}) {
+        TextButton(onClick = openSettings) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(5.dp),
                 modifier = Modifier.align(Alignment.CenterVertically)
