@@ -17,7 +17,9 @@ import app.nush.hearme.ui.theme.HearMeTheme
 @Preview
 @Composable
 fun CallBar() {
-    val callTime = remember { mutableStateOf(23230) }
+    val threadStarted = remember { mutableStateOf(false) }
+    val callTime = remember { mutableStateOf(0) }
+    val callRunning = remember { mutableStateOf(false) }
 
     Card(
         modifier = Modifier.padding(10.dp).fillMaxWidth(),
@@ -36,7 +38,8 @@ fun CallBar() {
             )
 
             Text(
-                text = callTime.value.toString(),
+                text="${(callTime.value/60).toString().padStart(2, '0')}:" +
+                        (callTime.value%60).toString().padStart(2, '0'),
                 color=Color.White,
                 modifier = Modifier.align(Alignment.CenterVertically)
             )
@@ -44,9 +47,20 @@ fun CallBar() {
             Spacer(Modifier.weight(3f))
 
             OutlinedButton(
-                onClick = {}
+                onClick = {
+                    callRunning.value = !callRunning.value
+                    if (!threadStarted.value) {
+                        Thread {
+                            while (true) {
+                                if (callRunning.value) callTime.value++
+                                else callTime.value = 0
+                                Thread.sleep(1000)
+                            }
+                        }.start()
+                    }
+                }
             ) {
-                Text("End Call")
+                Text(if (callRunning.value) "End call" else "Start call")
             }
         }
     }

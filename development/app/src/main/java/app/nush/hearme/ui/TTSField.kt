@@ -19,15 +19,12 @@ import androidx.compose.ui.unit.dp
 fun TTSField() {
     val scroll = rememberScrollState(0)
     val transcript = remember { mutableStateOf("""
-        Good morning, I am Jed Lim and I will be reporting on Problem 13, Candle Powered Turbine.
+        Good Morning Sir, would you be willing to participate in a survey on the government's efforts to combat COVID-19?
         
-        The problem statement states that a paper spiral suspended above the candle will start to rotate. We are tasked to optimize this setup for maximum torque. The relevant parameters to investigate are the properties of the paper, the shape of the spiral, the candle’s heat output, the radial position of the candle and the height of the spiral above the candle.
+        Yes sure.
         
-        Here is my content for today.
+        On a scale of 1 - 5, with 5 being the strongly agree and 1 being strongly disagree, do you agree the government has provided sufficient support for people who have lost their jobs due to COVID-19?
         
-        First, let’s take a look at some basics.
-        
-        Our experimental setup consists of a paper spiral held at the top by a pin. The pin is suspended by the retort stand. The candle is placed below the spiral.
     """.trimIndent()) }
 
     Text(
