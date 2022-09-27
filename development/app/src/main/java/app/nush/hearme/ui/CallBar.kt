@@ -14,9 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.nush.hearme.ui.theme.HearMeTheme
 
-@Preview
 @Composable
-fun CallBar() {
+fun CallBar(startListening: () -> Unit, stopListening: () -> Unit) {
     val threadStarted = remember { mutableStateOf(false) }
     val callTime = remember { mutableStateOf(0) }
     val callRunning = remember { mutableStateOf(false) }
@@ -49,6 +48,9 @@ fun CallBar() {
             OutlinedButton(
                 onClick = {
                     callRunning.value = !callRunning.value
+                    if (callRunning.value) startListening()
+                    else stopListening()
+
                     if (!threadStarted.value) {
                         Thread {
                             while (true) {
