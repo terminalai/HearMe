@@ -68,7 +68,9 @@ class MainActivity : ComponentActivity() {
             override fun onBufferReceived(bytes: ByteArray) {}
             override fun onEndOfSpeech() {}
             override fun onError(i: Int) {}
-            override fun onResults(bundle: Bundle) {}
+            override fun onResults(bundle: Bundle) {
+                speechRecognizer.startListening(speechRecognizerIntent)
+            }
 
             override fun onPartialResults(bundle: Bundle) {
                 val data = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
